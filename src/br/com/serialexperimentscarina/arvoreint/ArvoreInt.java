@@ -40,16 +40,16 @@ public class ArvoreInt implements IArvore{
 		try {
 			No no = nodeSearch(raiz, valor);
 			int level = nodeLevel(raiz, valor);
-			System.out.println(no + " - [NÌvel: " + level + " ]");
+			System.out.println(no + " - [N√≠vel: " + level + " ]");
 		} catch (Exception e) {
-			throw new Exception("Valor n„o encontrado!");
+			throw new Exception("Valor n√£o encontrado!");
 		}
 		
 	}
 
 	private No nodeSearch(No raizAtual, int valor) throws Exception {
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else if (valor < raizAtual.dado) {
 			return nodeSearch(raizAtual.esquerda, valor);
 		} else if (valor > raizAtual.dado) {
@@ -61,7 +61,7 @@ public class ArvoreInt implements IArvore{
 
 	private int nodeLevel(No raizAtual, int valor) throws Exception {
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else if (valor < raizAtual.dado) {
 			return 1 + nodeLevel(raizAtual.esquerda, valor);
 		} else if (valor > raizAtual.dado) {
@@ -76,13 +76,13 @@ public class ArvoreInt implements IArvore{
 		try {
 			removeChild(raiz, valor);
 		} catch (Exception e) {
-			throw new Exception("Valor n„o encontrado!");
+			throw new Exception("Valor n√£o encontrado!");
 		}
 	}
 
 	private No removeChild(No raizAtual, int valor) throws Exception {
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else if (valor < raizAtual.dado) {
 			raizAtual.esquerda = removeChild(raizAtual.esquerda, valor);
 		} else if (valor > raizAtual.dado) {
@@ -110,13 +110,13 @@ public class ArvoreInt implements IArvore{
 
 	@Override
 	public void prefixSearch() throws Exception {
-		System.out.println("Busca prefixa: ");
+		System.out.println("Busca pr√©fixa: ");
 		prefix(raiz);
 	}
 
 	private void prefix(No raizAtual) throws Exception{
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else {
 			System.out.print(raizAtual.dado + " ");
 			if (raizAtual.esquerda != null) {
@@ -136,7 +136,7 @@ public class ArvoreInt implements IArvore{
 
 	private void infix(No raizAtual) throws Exception {
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else {
 			if (raizAtual.esquerda != null) {
 				infix(raizAtual.esquerda);
@@ -150,13 +150,13 @@ public class ArvoreInt implements IArvore{
 
 	@Override
 	public void postfixSearch() throws Exception {
-		System.out.println("Busca pÛsfixa: ");
+		System.out.println("Busca p√≥sfixa: ");
 		postfix(raiz);		
 	}
 
 	private void postfix(No raizAtual) throws Exception {
 		if (raizAtual == null) {
-			throw new Exception("¡rvore vazia!");
+			throw new Exception("√Årvore vazia!");
 		} else {
 			if (raizAtual.esquerda != null) {
 				postfix(raizAtual.esquerda);
